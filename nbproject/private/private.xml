@@ -3,13 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Mo%20Nasr/OneDrive/Documents/NetBeansProjects/javaGithubProject/CafeMangementSystem/src/model/User.java</file>
-            <file>file:/C:/Users/Mo%20Nasr/OneDrive/Documents/NetBeansProjects/javaGithubProject/CafeMangementSystem/src/cafemangementsystem/CafeMangementSystem.java</file>
-            <file>file:/C:/Users/Mo%20Nasr/OneDrive/Documents/NetBeansProjects/javaGithubProject/CafeMangementSystem/src/dao/userdao.java</file>
-            <file>file:/C:/Users/Mo%20Nasr/OneDrive/Documents/NetBeansProjects/javaGithubProject/CafeMangementSystem/src/cafemangementsystem/signup.java</file>
-            <file>file:/C:/Users/Mo%20Nasr/OneDrive/Documents/NetBeansProjects/javaGithubProject/CafeMangementSystem/src/dao/tables.java</file>
-            <file>file:/C:/Users/Mo%20Nasr/OneDrive/Documents/NetBeansProjects/javaGithubProject/CafeMangementSystem/src/dao/connectionProvider.java</file>
-            <file>file:/C:/Users/Mo%20Nasr/OneDrive/Documents/NetBeansProjects/javaGithubProject/CafeMangementSystem/src/dao/dpoperations.java</file>
+            <file>file:/D:/nb%20projects/cafe_app_with_java/src/dao/userdao.java</file>
+            <file>file:/D:/nb%20projects/cafe_app_with_java/src/cafemangementsystem/signup.java</file>
+            <file>file:/D:/nb%20projects/cafe_app_with_java/src/cafemangementsystem/CafeMangementSystem.java</file>
+            <file>file:/D:/nb%20projects/cafe_app_with_java/src/dao/tables.java</file>
+            <file>file:/D:/nb%20projects/cafe_app_with_java/src/model/Category.java</file>
+            <file>file:/D:/nb%20projects/cafe_app_with_java/src/dao/CategoryDao.java</file>
+            <file>file:/D:/nb%20projects/cafe_app_with_java/src/cafemangementsystem/login.java</file>
+            <file>file:/D:/nb%20projects/cafe_app_with_java/src/cafemangementsystem/home.java</file>
+            <file>file:/D:/nb%20projects/cafe_app_with_java/src/cafemangementsystem/ManageCategory.java</file>
+            <file>file:/D:/nb%20projects/cafe_app_with_java/src/cafemangementsystem/ForgotPassword.java</file>
         </group>
     </open-files>
 </project-private>

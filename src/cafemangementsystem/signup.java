@@ -1,7 +1,9 @@
 package cafemangementsystem;
+
 import javax.swing.*;
 import model.*;
 import dao.*;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -13,8 +15,9 @@ import dao.*;
  */
 public class signup extends javax.swing.JFrame {
 
-    public String emailPattern="^[a-zA-Z0-9]+[@]+[a-zA-Z0-9]+[.]+[a-zA-Z0-9]+$";
-    public String mobilePattern="^[0-9]*$";
+    public String emailPattern = "^[a-zA-Z0-9]+[@]+[a-zA-Z0-9]+[.]+[a-zA-Z0-9]+$";
+    public String mobilePattern = "^[0-9]*$";
+
     /**
      * Creates new form signup
      */
@@ -23,8 +26,7 @@ public class signup extends javax.swing.JFrame {
         btnsave.setEnabled(false);
     }
 
-    public void clear()
-    {
+    public void clear() {
         txtname.setText("");
         txtemail.setText("");
         txtmobilenumber.setText("");
@@ -34,22 +36,22 @@ public class signup extends javax.swing.JFrame {
         txtanswer.setText("");
         btnsave.setEnabled(false);
     }
-    public void validdatafields()
-    {
-        String name=txtname.getText();
-        String email=txtemail.getText();
-        String mobile=txtmobilenumber.getText();
-        String address=txtaddress.getText();
-        String password=txtpassword.getText();
-        String security=txtsecurityquestion.getText();
-        String answer=txtanswer.getText();
-        if((!name.equals(""))&& email.matches(emailPattern)&& mobile.matches(mobilePattern)&& (!address.equals(""))&& (mobile.length()==11)&& (!password.equals(""))&& (!security.equals(""))&&(!answer.equals("")))
-        {
+
+    public void validdatafields() {
+        String name = txtname.getText();
+        String email = txtemail.getText();
+        String mobile = txtmobilenumber.getText();
+        String address = txtaddress.getText();
+        String password = txtpassword.getText();
+        String security = txtsecurityquestion.getText();
+        String answer = txtanswer.getText();
+        if ((!name.equals("")) && email.matches(emailPattern) && mobile.matches(mobilePattern) && (!address.equals("")) && (mobile.length() == 11) && (!password.equals("")) && (!security.equals("")) && (!answer.equals(""))) {
             btnsave.setEnabled(true);
+        } else {
+            btnsave.setEnabled(false);
         }
-        else btnsave.setEnabled(false);
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -259,12 +261,13 @@ public class signup extends javax.swing.JFrame {
     }//GEN-LAST:event_txtnameActionPerformed
 
     private void btnforgetpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnforgetpasswordActionPerformed
-        // TODO add your handling code here:
+        setVisible(false);
+        new ForgotPassword().setVisible(true);
     }//GEN-LAST:event_btnforgetpasswordActionPerformed
 
     private void btnsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveActionPerformed
         // TODO add your handling code here:
-        User user=new User();
+        User user = new User();
         user.setName(txtname.getText());
         user.setEmail(txtemail.getText());
         user.setMobilenumber(txtmobilenumber.getText());
@@ -273,14 +276,13 @@ public class signup extends javax.swing.JFrame {
         user.setSecurityquestion(txtsecurityquestion.getText());
         user.setAnswer(txtanswer.getText());
         userdao.save(user);
-        clear(); 
+        clear();
     }//GEN-LAST:event_btnsaveActionPerformed
 
     private void btnexitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnexitActionPerformed
         // TODO add your handling code here:
-        int a=JOptionPane.showConfirmDialog(null,"Do you want to close application?","Select",JOptionPane.YES_NO_OPTION);
-        if(a==0)
-        {
+        int a = JOptionPane.showConfirmDialog(null, "Do you want to close application?", "Select", JOptionPane.YES_NO_OPTION);
+        if (a == 0) {
             System.exit(0);
         }
     }//GEN-LAST:event_btnexitActionPerformed

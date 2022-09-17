@@ -15,8 +15,11 @@ public class tables {
         {
             String userTable ="create table user(id int AUTO_INCREMENT primary key,name varchar(200),email varchar(200),mobilenumber varchar(15),address varchar(200),password varchar(200),securityquestion varchar(200),answer varchar(200),states varchar(20),UNIQUE (email))";
             String admindetails="insert into user (name,email,mobilenumber,address,password,securityquestion,answer,states) values('Admin','admin@gmail.com','01011223344','egypt','admin12','Say my name','Heisenberg','true')";
+            String categoryTable = "create table category(id int AUTO INCREAMENT primary key,name varchar(200)";
             dpoperations.setdataordelete(admindetails,"Admin Added Successfully");
             dpoperations.setdataordelete(userTable,"User Table Created Successfully");
+            dpoperations.setdataordelete(categoryTable,"Category Table Created Successfully");
+
         }
         catch(Exception e)
         {

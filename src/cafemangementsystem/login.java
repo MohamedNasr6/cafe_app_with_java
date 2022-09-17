@@ -3,18 +3,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package cafemangementsystem;
+
 import javax.swing.*;
 import model.*;
 import dao.*;
+
 /**
  *
  * @author MoNasr
  */
 public class login extends javax.swing.JFrame {
 
-    public String emailPattern="^[a-zA-Z0-9]+[@]+[a-zA-Z0-9]+[.]+[a-zA-Z0-9]+$";
-    public String mobilePattern="^[0-9]*$";
-    
+    public String emailPattern = "^[a-zA-Z0-9]+[@]+[a-zA-Z0-9]+[.]+[a-zA-Z0-9]+$";
+    public String mobilePattern = "^[0-9]*$";
+
     /**
      * Creates new form login
      */
@@ -22,22 +24,22 @@ public class login extends javax.swing.JFrame {
         initComponents();
     }
 
-    public void clear()
-    {
+    public void clear() {
         txtemail.setText("");
         txtpassword.setText("");
         btnlogin.setEnabled(false);
     }
-    public void validdatafields()
-    {
-        String email=txtemail.getText();
-        String password=txtpassword.getText();
-        if(email.matches(emailPattern)&&  (!password.equals("")))
-        {
+
+    public void validdatafields() {
+        String email = txtemail.getText();
+        String password = txtpassword.getText();
+        if (email.matches(emailPattern) && (!password.equals(""))) {
             btnlogin.setEnabled(true);
+        } else {
+            btnlogin.setEnabled(false);
         }
-        else btnlogin.setEnabled(false);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -124,6 +126,11 @@ public class login extends javax.swing.JFrame {
 
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton4.setText("Forget password");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 500, -1, -1));
 
         jButton5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -143,36 +150,30 @@ public class login extends javax.swing.JFrame {
 
     private void btnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginActionPerformed
         // TODO add your handling code here:
-        String email=txtemail.getText();
-        String pass=txtpassword.getText();
-        User user =null;
-        user=userdao.login(email, pass);
-        if (user==null)
-        {
-            JOptionPane.showMessageDialog(null, "Incorrect Email or Password","Message",JOptionPane.ERROR_MESSAGE);
-        }
-        else
-        {
-            if(user.getStatus().equals("false"))
-            {
-                ImageIcon icon=new ImageIcon("src/popupicon/wait.png");
-                JOptionPane.showMessageDialog(null, "Wait for admin Approval","Message",JOptionPane.INFORMATION_MESSAGE,icon);
+        String email = txtemail.getText();
+        String pass = txtpassword.getText();
+        User user = null;
+        user = userdao.login(email, pass);
+        if (user == null) {
+            JOptionPane.showMessageDialog(null, "Incorrect Email or Password", "Message", JOptionPane.ERROR_MESSAGE);
+        } else {
+            if (user.getStatus().equals("false")) {
+                ImageIcon icon = new ImageIcon("src/popupicon/wait.png");
+                JOptionPane.showMessageDialog(null, "Wait for admin Approval", "Message", JOptionPane.INFORMATION_MESSAGE, icon);
                 clear();
             }
-            if(user.getStatus().equals("true"))
-            {
+            if (user.getStatus().equals("true")) {
                 setVisible(false);
                 new home(email).setVisible(true);
             }
         }
-        
+
     }//GEN-LAST:event_btnloginActionPerformed
 
     private void btnexitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnexitActionPerformed
         // TODO add your handling code here:
-        int a=JOptionPane.showConfirmDialog(null,"Do you want to close application?","Select",JOptionPane.YES_NO_OPTION);
-        if(a==0)
-        {
+        int a = JOptionPane.showConfirmDialog(null, "Do you want to close application?", "Select", JOptionPane.YES_NO_OPTION);
+        if (a == 0) {
             System.exit(0);
         }
     }//GEN-LAST:event_btnexitActionPerformed
@@ -196,8 +197,13 @@ public class login extends javax.swing.JFrame {
         // TODO add your handling code here:
         setVisible(false);
         new signup().setVisible(true);
-        
+
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        setVisible(false);
+        new ForgotPassword().setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
