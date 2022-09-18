@@ -3,14 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/D:/cafe_app_with_java-monasr/cafe_app_with_java-monasr/src/model/Bill.java</file>
+            <file>file:/D:/cafe_app_with_java-monasr/cafe_app_with_java-monasr/src/dao/CategoryDao.java</file>
             <file>file:/D:/cafe_app_with_java-monasr/cafe_app_with_java-monasr/src/cafemangementsystem/ForgotPassword.java</file>
             <file>file:/D:/cafe_app_with_java-monasr/cafe_app_with_java-monasr/src/cafemangementsystem/vedproduct.java</file>
             <file>file:/D:/cafe_app_with_java-monasr/cafe_app_with_java-monasr/src/cafemangementsystem/home.java</file>
             <file>file:/D:/cafe_app_with_java-monasr/cafe_app_with_java-monasr/src/cafemangementsystem/CafeMangementSystem.java</file>
+            <file>file:/D:/cafe_app_with_java-monasr/cafe_app_with_java-monasr/src/cafemangementsystem/PlaceOrder.java</file>
             <file>file:/D:/cafe_app_with_java-monasr/cafe_app_with_java-monasr/src/dao/productdao.java</file>
+            <file>file:/D:/cafe_app_with_java-monasr/cafe_app_with_java-monasr/src/dao/BillDao.java</file>
             <file>file:/D:/cafe_app_with_java-monasr/cafe_app_with_java-monasr/src/cafemangementsystem/AddNewProduct.java</file>
             <file>file:/D:/cafe_app_with_java-monasr/cafe_app_with_java-monasr/src/dao/tables.java</file>
-            <file>file:/D:/cafe_app_with_java-monasr/cafe_app_with_java-monasr/src/cafemangementsystem/ManageCategory.java</file>
         </group>
     </open-files>
 </project-private>

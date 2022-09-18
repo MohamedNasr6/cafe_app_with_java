@@ -7,6 +7,7 @@ package dao;
 import javax.swing.JOptionPane;
 import model.User;
 import java.sql.*;
+import java.util.ArrayList;
 
 /**
  *
@@ -51,5 +52,30 @@ public class userdao {
     public static void update(String email, String newPassword) {
         String query = "update user set password = '" + newPassword + "' where email = '" + email + "'";
         dpoperations.setdataordelete(query, "password changed successfully");
+    }
+    public static ArrayList<User> getAllRecords(String email){
+    ArrayList<User> arrayList =new ArrayList<>();
+    try{
+    ResultSet rs =dpoperations.getdata("select *from user where email like '%"+email+"%'");
+    while(rs.next()){
+    User user = new User();
+    user.setId(rs.getInt("id"));
+    user.setName(rs.getString("name"));
+    user.setEmail(rs.getString("email"));
+    user.setMobilenumber(rs.getString("mobileNumber"));
+    user.setAddress(rs.getString("address"));
+    user.setSecurityquestion(rs.getString("securityQuestion"));
+    user.setStatus(rs.getString("status"));
+    arrayList.add(user);
+    }
+    }
+    catch(Exception e){
+    JOptionPane.showMessageDialog(null, e);
+    }
+    return arrayList;
+    }
+    public static void changeStatus(String email,String status){
+    String query ="Update user set status='"+status+"' where email ='"+email+"'";
+    dpoperations.setdataordelete(query, "status changed successfully");
     }
 }
